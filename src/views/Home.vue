@@ -38,7 +38,7 @@
           <!-- Hero Content - Shows second on mobile -->
           <div class="col-12 col-lg-6 hero-content order-2 order-lg-1">
             <h1 class="display-4 display-lg-3 fw-bold text-dark mb-4">
-              Hi, I'm <span class="text-primary">Fatjon Gashi</span>
+              Hi, I'm <span class="text-primary">Fatjon Gashii</span>
             </h1>
             <p class="lead text-muted mb-4">
               A passionate full-stack developer with expertise in modern web technologies. I create
