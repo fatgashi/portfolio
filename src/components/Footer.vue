@@ -10,16 +10,25 @@
             experiences.
           </p>
           <div class="d-flex gap-3">
-            <a href="#" class="text-light text-decoration-none fs-5">
-              <i class="bi bi-twitter"></i>
-            </a>
-            <a href="#" class="text-light text-decoration-none fs-5">
+            <a
+              href="https://www.linkedin.com/in/fatjon-gashi-75057921b/"
+              target="_blank"
+              class="text-light text-decoration-none fs-5"
+            >
               <i class="bi bi-linkedin"></i>
             </a>
-            <a href="#" class="text-light text-decoration-none fs-5">
+            <a
+              href="https://www.instagram.com/fatjonn_gashi/"
+              target="_blank"
+              class="text-light text-decoration-none fs-5"
+            >
               <i class="bi bi-instagram"></i>
             </a>
-            <a href="#" class="text-light text-decoration-none fs-5">
+            <a
+              href="https://github.com/fatgashi"
+              target="_blank"
+              class="text-light text-decoration-none fs-5"
+            >
               <i class="bi bi-github"></i>
             </a>
           </div>
