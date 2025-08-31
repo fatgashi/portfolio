@@ -134,6 +134,14 @@
 <script setup>
 import { ref, computed, onMounted, onUnmounted } from 'vue'
 
+// Import project images
+import bettingImage from '@/assets/images/betting.png'
+import pharmacyImage from '@/assets/images/pharmacy.png'
+import dietImage from '@/assets/images/diet.png'
+import cs16Image from '@/assets/images/cs16.png'
+import dentalImage from '@/assets/images/dental.png'
+import monitoringImage from '@/assets/images/project-monitoring.png'
+
 // Component name for ESLint
 defineOptions({
   name: 'ProjectsPage',
@@ -148,6 +156,16 @@ const selectedCategory = ref('All')
 // Animation observer
 let observer = null
 
+// Create reactive image variables
+const projectImages = ref({
+  betting: bettingImage,
+  pharmacy: pharmacyImage,
+  diet: dietImage,
+  cs16: cs16Image,
+  dental: dentalImage,
+  monitoring: monitoringImage,
+})
+
 // Sample projects data
 const projects = ref([
   {
@@ -158,7 +176,7 @@ const projects = ref([
       'Complete betting system with multi-role access (Admin/Reseller/Shop/User), CashOut, multi-bet, refunds, casino integrations, and real-time odds sync. Migrated the legacy PHP backend to Node.js microservices for scalability.',
     category: 'Web Development',
     technologies: ['Node.js', 'Express', 'MySQL', 'RabbitMQ', 'MongoDB', 'Socket.io', 'Docker'],
-    image: '/src/assets/images/betting.png',
+    image: projectImages.value.betting,
     liveUrl: 'https://tipizo.com',
     githubFrontendUrl: '',
     githubBackendUrl: '',
@@ -171,7 +189,7 @@ const projects = ref([
       'Multi-client inventory with per-batch expiry tracking, low-stock alerts, barcode scanning, and configurable thresholds per pharmacy. Admin dashboards and role-based access.',
     category: 'Web Development',
     technologies: ['Node.js', 'Vue.js', 'MySQL', 'Passport', 'Bootstrap'],
-    image: '/src/assets/images/pharmacy.png',
+    image: projectImages.value.pharmacy,
     liveUrl: '',
     githubFrontendUrl: '',
     githubBackendUrl: 'https://github.com/fatgashi/pharmacy-stock-system',
@@ -184,7 +202,7 @@ const projects = ref([
       '34-question assessment → payment → personalized PDF diet plan. Includes email verification, limited-time offers, admin plan editor, and stats.',
     category: 'SaaS',
     technologies: ['Node.js', 'MongoDB', 'Vue.js', 'Paysera', 'Passport', 'Bootstrap'],
-    image: '/src/assets/images/diet.png',
+    image: projectImages.value.diet,
     liveUrl: '',
     githubFrontendUrl: 'https://github.com/fatgashi/Diet-app-frontend',
     githubBackendUrl: 'https://github.com/fatgashi/Diet-app-backend',
@@ -197,7 +215,7 @@ const projects = ref([
       'Full-stack web application (Vue frontend + Node.js backend) for managing CS 1.6 servers: real-time RCON console & log streaming, live player/session tracking, player stats editor, daily/level rewards & VIP management, ban/kick tools, and role-based admin dashboards. WebSockets power live updates; data persisted in MySQL.',
     category: 'Gaming',
     technologies: ['Node.js', 'MySQL', 'MongoDB', 'RCON', 'Vue.js'],
-    image: '/src/assets/images/cs16.png',
+    image: projectImages.value.cs16,
     liveUrl: 'https://zm-westcstrike.com',
     githubFrontendUrl: 'https://github.com/fatgashi/cstrike',
     githubBackendUrl: 'https://github.com/fatgashi/cstrike-backend',
@@ -210,7 +228,7 @@ const projects = ref([
       'E-commerce style web app for buying dental books. REST API backend, Vue 2 frontend, MongoDB, Stripe checkout, and real-time communication with Socket.io.',
     category: 'E-commerce',
     technologies: ['Node.js', 'Vue 2', 'MongoDB', 'Stripe', 'Socket.io'],
-    image: '/src/assets/images/dental.png',
+    image: projectImages.value.dental,
     liveUrl: '',
     githubFrontendUrl: 'https://github.com/fatgashi/DigitalLibrary-Frontend',
     githubBackendUrl: 'https://github.com/fatjon-gashi/DentalLibrary-backend',
@@ -220,7 +238,7 @@ const projects = ref([
     slug: 'uptime-monitor',
     title: 'Uptime & Project Monitoring',
     description:
-      'Lightweight monitor that pings configured domains every 5 minutes and alerts on downtime / slow responses. Includes incident history, per-project status, and optional public status page. Built for quick visibility across services.',
+      'Lightweight monitor that pings configured domains every 5 minutes and alerts on downtime / slow response alerts. Includes incident history, per-project status, and optional public status page. Built for quick visibility across services.',
     category: 'Web Development',
     technologies: [
       'Node.js',
@@ -231,7 +249,7 @@ const projects = ref([
       'Email Alerts',
       'Docker',
     ],
-    image: '/src/assets/images/project-monitoring.png',
+    image: projectImages.value.monitoring,
     liveUrl: '',
     githubFrontendUrl: '',
     githubBackendUrl: '',
